@@ -1,0 +1,20 @@
+<div *ngIf="movie">
+  <div class="container">
+    <div class="col-md-6 movie_image">
+      <img src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}">
+    </div>
+    <div class="col-md-6 description_span">
+      <p class="movie_option"><strong>Title: </strong><a>{{movie.title}}</a></p>
+      <p class="movie_option"><strong>Genre: </strong><a>{{movie.genre_ids}}</a></p>
+      <p class="movie_option"><strong>Release Date: </strong><a>{{movie.release_date}}</a></p>
+      <p class="movie_option"><strong>Vote average: </strong><a>{{movie.vote_average}}</a></p>
+    </div>
+  </div>
+  <div class="container">
+    <p>
+      <strong>Overview:</strong><br>
+      {{movie.overview}}
+    </p>
+  </div>
+
+</div>

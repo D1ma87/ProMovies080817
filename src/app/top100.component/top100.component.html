@@ -1,0 +1,24 @@
+<div class="col-sm-9">
+  <div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Poster</th>
+        <th>Movie</th>
+        <th>Year</th>
+        <th>Gender</th>
+        <th>Rating</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let movie of movies">
+        <td><a><img src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}"></a></td>
+        <td><a>{{movie.title}}</a></td>
+        <td><a>{{movie.release_date}}</a></td>
+        <td><a>{{movie.genre_ids}}</a></td>
+        <td><a>{{movie.vote_average}}</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

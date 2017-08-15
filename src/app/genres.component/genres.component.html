@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="sidebar-nav">
+        <div class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <span class="visible-xs navbar-brand">Sidebar menu</span>
+          </div>
+          <div class="navbar-collapse collapse sidebar-navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li role="presentation" *ngFor="let genre of genres" (click)="onSelect(genre)" [class.selected]="genre === selectedGenre">
+                <a>{{genre.name}}</a>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div *ngIf="selectedGenre">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Poster</th>
+            <th>Movie</th>
+            <th>Year</th>
+            <th>Gender</th>
+            <th>Rating</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let movie of movies">
+            <td><a><img src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}"></a></td>
+            <td><a [routerLink]="['/movie', movie.id, selectedGenre.id, 1]">{{movie.title}}</a></td>
+            <td><a>{{movie.release_date}}</a></td>
+            <td><a>{{movie.genre_ids}}</a></td>
+            <td><a>{{movie.vote_average}}</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
